@@ -28,12 +28,13 @@ TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
 
 
 def generate_launch_description():
-    use_sim_time = LaunchConfiguration('use_sim_time', default='false')
+    use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     map_dir = LaunchConfiguration(
         'map',
         default=os.path.join(
             get_package_share_directory('turtlebot3_navigation2'),
-            'map',
+            'maps',
+            'house',
             'map.yaml'))
 
     param_file_name = TURTLEBOT3_MODEL + '.yaml'
