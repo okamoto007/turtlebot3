@@ -45,10 +45,10 @@ def generate_launch_description():
             'param',
             param_file_name))
 
-    nav2_launch_file_dir = os.path.join(get_package_share_directory('nav2_bringup'), 'launch')
+    nav2_launch_file_dir = os.path.join(get_package_share_directory('nav2_bringup_debug'), 'launch')
 
     rviz_config_dir = os.path.join(
-        get_package_share_directory('nav2_bringup'),
+        get_package_share_directory('nav2_bringup_debug'),
         'rviz',
         'nav2_default_view.rviz')
 
@@ -76,11 +76,11 @@ def generate_launch_description():
                 'params_file': param_dir}.items(),
         ),
 
-        Node(
-            package='rviz2',
-            executable='rviz2',
-            name='rviz2',
-            arguments=['-d', rviz_config_dir],
-            parameters=[{'use_sim_time': use_sim_time}],
-            output='screen'),
+        # Node(
+        #     package='rviz2',
+        #     executable='rviz2',
+        #     name='rviz2',
+        #     arguments=['-d', rviz_config_dir],
+        #     parameters=[{'use_sim_time': use_sim_time}],
+        #     output='screen'),
     ])
